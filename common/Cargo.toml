@@ -1,0 +1,35 @@
+[package]
+name = "centrum-mpc-common"
+authors = ['InvArchitects <https://github.com/InvArch>']
+description = ''
+edition = '2021'
+homepage = 'https://invarch.network'
+license = 'GPLv3'
+repository = 'https://github.com/Abstracted-Labs/centrum-mpc'
+version = '0.1.0-dev'
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[dependencies]
+codec = {workspace = true, default-features = false}
+scale-info = {workspace = true, default-features = false}
+
+sp-std = { workspace = true, default-features = false }
+
+cait-sith = { optional = true, git = "https://github.com/LIT-Protocol/cait-sith", features = ["k256"], rev = "8ad2316" }
+k256 = { version = "0.13.1", default-features = false, features = ["sha256", "ecdsa", "serde"] }
+hpke = { optional = true, version = "0.11", features = ["x25519", "serde_impls"], default-features = false }
+sc-network-types = { optional = true, version = "0.12.1", default-features = false }
+elliptic-curve = { version = "0.13.8", default-features = false, features = ["sec1"] }
+hex = { version = "0.4.3", default-features = false }
+
+[features]
+default = ["std"]
+std = [
+    "codec/std",
+    "cait-sith",
+    "hpke",
+    "sc-network-types",
+    "sp-std/std",
+]

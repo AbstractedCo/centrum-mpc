@@ -1,0 +1,67 @@
+[package]
+name = 'pallet-mpc-manager'
+authors = ['InvArchitects <https://github.com/InvArch>']
+description = ''
+edition = '2021'
+homepage = 'https://invarch.network'
+license = 'GPLv3'
+repository = 'https://github.com/Abstracted-Labs/centrum-mpc'
+version = '0.1.0-dev'
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[dependencies]
+log = {workspace = true, default-features = false}
+parity-scale-codec = { version = "3.6.12", features = ["derive"], default-features = false }
+scale-info = {workspace = true, default-features = false}
+#serde = {workspace = true, optional = true}
+
+frame-support = {workspace = true, default-features = false}
+frame-system = {workspace = true, default-features = false}
+num-traits = {workspace = true, default-features = false}
+sp-api = {workspace = true, default-features = false}
+sp-arithmetic = {workspace = true, default-features = false}
+sp-core = {workspace = true, default-features = false}
+sp-runtime = {workspace = true, default-features = false}
+sp-std = {workspace = true, default-features = false}
+
+frame-benchmarking = {workspace = true, default-features = false, optional = true}
+
+#cait-sith = { git = "https://github.com/LIT-Protocol/cait-sith", features = ["k256"], rev = "8ad2316" }
+k256 = { version = "0.13.1", default-features = false, features = ["sha256", "ecdsa", "serde"] }
+#hpke = { version = "0.11", features = ["x25519", "serde_impls"], default-features = false }
+#sc-network-types = { version = "0.10.0", default-features = false }
+elliptic-curve = { version = "0.13.8", default-features = false, features = ["sec1"] }
+hex = { version = "0.4.3", default-features = false }
+
+centrum-mpc-common = { workspace = true, default-features = false }
+
+[dev-dependencies]
+
+
+[features]
+default = ["std"]
+std = [
+#	"serde",
+	"parity-scale-codec/std",
+	"scale-info/std",
+	"log/std",
+	"num-traits/std",
+	"sp-core/std",
+	"sp-runtime/std",
+	"sp-arithmetic/std",
+	"sp-std/std",
+	"frame-support/std",
+	"frame-system/std",
+  	"sp-api/std",
+	"k256/std",
+#	"hpke/std",
+	"elliptic-curve/std"
+]
+runtime-benchmarks = [
+	"frame-benchmarking/runtime-benchmarks",
+	"sp-runtime/runtime-benchmarks",
+	"frame-system/runtime-benchmarks",
+]
+try-runtime = ["frame-support/try-runtime"]

@@ -1,0 +1,58 @@
+[package]
+name = "centrum-mpc-node"
+
+version.workspace = true
+license.workspace = true
+edition.workspace = true
+
+[dependencies]
+async-trait = { workspace = true }
+codec = { workspace = true }
+hex-literal = { workspace = true }
+log = { workspace = true }
+scale-info = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+pallet-mpc-manager-runtime-api = { workspace = true, default-features = true }
+pallet-mpc-manager = { workspace = true, default-features = true }
+centrum-mpc-common = { workspace = true, default-features = true, features = ["std"] }
+
+cait-sith = { workspace = true }
+subtle = { workspace = true }
+thiserror = { workspace = true }
+k256 = { workspace = true }
+highway = { workspace = true }
+rand = { workspace = true }
+tokio = { workspace = true }
+borsh = { workspace = true }
+hpke = { workspace = true }
+sha2 = { workspace = true }
+hkdf = { workspace = true }
+chrono = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+anyhow = { workspace = true }
+hex = { workspace = true }
+frame-system = { workspace = true, features = ["std"] }
+sp-application-crypto = { workspace = true }
+bincode = { workspace = true }
+sc-offchain = { workspace = true }
+threadpool = { workspace = true }
+num_cpus = { workspace = true }
+parking_lot = { workspace = true }
+sc-client-db = { workspace = true }
+sp-core = { workspace = true }
+sc-network = { workspace = true }
+sp-runtime = { workspace = true }
+futures = { workspace = true }
+sc-keystore = { workspace = true }
+sp-keystore = { workspace = true }
+sp-api = { workspace = true }
+substrate-frame-rpc-system = { workspace = true }
+sc-transaction-pool-api = { workspace = true }
+sc-client-api = { workspace = true }
+sc-transaction-pool = { workspace = true }
+sp-transaction-pool = { workspace = true }
+sc-service = { workspace = true }
+sc-executor = { workspace = true }
