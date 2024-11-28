@@ -13,7 +13,7 @@ targets = ["x86_64-unknown-linux-gnu"]
 
 [dependencies]
 log = {workspace = true, default-features = false}
-parity-scale-codec = { version = "3.6.12", features = ["derive"], default-features = false }
+parity-scale-codec = { workspace = true, features = ["derive"], default-features = false }
 scale-info = {workspace = true, default-features = false}
 #serde = {workspace = true, optional = true}
 
@@ -29,11 +29,11 @@ sp-std = {workspace = true, default-features = false}
 frame-benchmarking = {workspace = true, default-features = false, optional = true}
 
 #cait-sith = { git = "https://github.com/LIT-Protocol/cait-sith", features = ["k256"], rev = "8ad2316" }
-k256 = { version = "0.13.1", default-features = false, features = ["sha256", "ecdsa", "serde"] }
+k256 = { workspace = true, default-features = false, features = ["sha256", "ecdsa", "serde"] }
 #hpke = { version = "0.11", features = ["x25519", "serde_impls"], default-features = false }
 #sc-network-types = { version = "0.10.0", default-features = false }
-elliptic-curve = { version = "0.13.8", default-features = false, features = ["sec1"] }
-hex = { version = "0.4.3", default-features = false }
+elliptic-curve = { workspace = true, default-features = false, features = ["sec1"] }
+hex = { workspace = true, default-features = false }
 
 centrum-mpc-common = { workspace = true, default-features = false }
 

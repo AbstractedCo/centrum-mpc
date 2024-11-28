@@ -18,6 +18,7 @@ hex-literal = { version = "0.3.4" }
 serde_json = "1.0.111"
 
 codec = { package = "parity-scale-codec", version = "3.6.12", features = ["derive"], default-features = false }
+parity-scale-codec = { version = "3.6.12", features = ["derive"], default-features = false }
 log = { version = "0.4.20", default-features = false }
 num-traits = { version = "0.2", default-features = false }
 scale-info = { version = "2.10.0", default-features = false, features = ["derive"] }
@@ -30,34 +31,34 @@ pallet-mpc-manager = { path = "./pallet-mpc-manager", default-features = false }
 centrum-mpc-common = { path = "./common", default-features = false }
 
 # polkadot-sdk dependencies
-frame-support = { version = "37.0.0", default-features = false }
-frame-system = { version = "37.1.0", default-features = false }
-sp-api = { version = "34.0.0", default-features = false }
-sp-arithmetic = { version = "26.0.0", default-features = false }
-sp-core = { version = "34.0.0", default-features = false }
-sp-io = { version = "38.0.0", default-features = false }
-sp-runtime = { version = "39.0.0", default-features = false }
-sp-std = { version = "14.0.0", default-features = false }
-frame-benchmarking = { version = "37.0.0", default-features = false }
+frame-support = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "stable2407", default-features = false }
+frame-system = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "stable2407", default-features = false }
+sp-api = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "stable2407", default-features = false }
+sp-arithmetic = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "stable2407", default-features = false }
+sp-core = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "stable2407", default-features = false }
+sp-io = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "stable2407", default-features = false }
+sp-runtime = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "stable2407", default-features = false }
+sp-std = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "stable2407", default-features = false }
+frame-benchmarking = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "stable2407", default-features = false }
 
-substrate-frame-rpc-system = { version = "38.0.0", default-features = false }
+substrate-frame-rpc-system = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "stable2407", default-features = false }
 
-sc-network = { version = "0.44.0", default-features = false }
+sc-network = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "stable2407", default-features = false }
+sc-network-types = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "stable2407", default-features = false }
+
+sp-application-crypto = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "stable2407", default-features = false, features = ["std"] }
+sc-offchain = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "stable2407" }
+sc-transaction-pool = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "stable2407", default-features = false }
+sc-transaction-pool-api = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "stable2407", default-features = false }
+sc-client-api = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "stable2407", default-features = false }
+sp-keystore = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "stable2407", default-features = false }
+sp-transaction-pool = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "stable2407", default-features = false }
+sc-service = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "stable2407", default-features = false }
+sc-executor = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "stable2407", default-features = false }
+sc-keystore = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "stable2407", default-features = false }
+sc-client-db = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "stable2407", default-features = false }
+
 elliptic-curve = { version = "0.13.8", features = ["sec1"] }
-
-sp-application-crypto = { version = "38.0.0", default-features = false, features = ["std"] }
-sc-offchain = { version = "39.0.0" }
-sc-transaction-pool = { version = "37.0.0", default-features = false }
-sc-transaction-pool-api = { version = "37.0.0", default-features = false }
-sc-client-api = { version = "37.0.0", default-features = false }
-sp-keystore = { version = "0.40.0", default-features = false }
-sp-transaction-pool = { version = "34.0.0", default-features = false }
-sc-service = { version = "0.45.0", default-features = false }
-sc-executor = { version = "0.40.0", default-features = false }
-sc-keystore = { version = "33.0.0", default-features = false }
-sc-client-db = { version = "0.44.0", default-features = false }
-
-#cait-sith = { git = "https://github.com/LIT-Protocol/cait-sith", features = ["k256"], rev = "8ad2316" }
 subtle = "2.5.0"
 thiserror = "1.0.58"
 k256 = { version = "0.13.1", features = ["sha256", "ecdsa", "serde"] }
