@@ -61,7 +61,7 @@ sc-client-db = { git = "https://github.com/paritytech/polkadot-sdk.git", branch 
 elliptic-curve = { version = "0.13.8", features = ["sec1"] }
 subtle = "2.5.0"
 thiserror = "1.0.58"
-k256 = { version = "0.13.1", features = ["sha256", "ecdsa", "serde"] }
+k256 = { version = "0.13.1", features = ["sha256", "ecdsa", "serde"], default-features = false }
 highway = "1.1.0"
 rand = "0.8"
 tokio = { version = "1", features = ["full"] }
@@ -73,7 +73,7 @@ chrono = "0.4.24"
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 anyhow = { version = "1", features = ["backtrace"] }
-hex = "0.4.3"
+hex = { version = "0.4.3", default-features = false }
 bincode = "1.3.3"
 threadpool = "1.7"
 num_cpus = "1.13"

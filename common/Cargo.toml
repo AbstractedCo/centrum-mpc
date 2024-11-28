@@ -32,4 +32,8 @@ std = [
     "hpke",
     "sc-network-types",
     "sp-std/std",
+    "elliptic-curve/std",
+    "hex/std",
+    "k256/std",
+    "scale-info/std",
 ]

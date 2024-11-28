@@ -12,30 +12,30 @@ version = '0.1.0-dev'
 targets = ["x86_64-unknown-linux-gnu"]
 
 [dependencies]
-log = {workspace = true, default-features = false}
-parity-scale-codec = { workspace = true, features = ["derive"], default-features = false }
-scale-info = {workspace = true, default-features = false}
-#serde = {workspace = true, optional = true}
+log = {workspace = true }
+parity-scale-codec = { workspace = true, features = ["derive"] }
+scale-info = {workspace = true }
+#serde = {workspace = true, optional = true }
 
-frame-support = {workspace = true, default-features = false}
-frame-system = {workspace = true, default-features = false}
-num-traits = {workspace = true, default-features = false}
-sp-api = {workspace = true, default-features = false}
-sp-arithmetic = {workspace = true, default-features = false}
-sp-core = {workspace = true, default-features = false}
-sp-runtime = {workspace = true, default-features = false}
-sp-std = {workspace = true, default-features = false}
+frame-support = {workspace = true }
+frame-system = {workspace = true }
+num-traits = {workspace = true }
+sp-api = {workspace = true }
+sp-arithmetic = {workspace = true }
+sp-core = {workspace = true }
+sp-runtime = {workspace = true }
+sp-std = {workspace = true }
 
-frame-benchmarking = {workspace = true, default-features = false, optional = true}
+frame-benchmarking = {workspace = true, optional = true }
 
 #cait-sith = { git = "https://github.com/LIT-Protocol/cait-sith", features = ["k256"], rev = "8ad2316" }
-k256 = { workspace = true, default-features = false, features = ["sha256", "ecdsa", "serde"] }
-#hpke = { version = "0.11", features = ["x25519", "serde_impls"], default-features = false }
-#sc-network-types = { version = "0.10.0", default-features = false }
-elliptic-curve = { workspace = true, default-features = false, features = ["sec1"] }
-hex = { workspace = true, default-features = false }
+k256 = { workspace = true, features = ["sha256", "ecdsa", "serde"] }
+#hpke = { version = "0.11", features = ["x25519", "serde_impls"] }
+#sc-network-types = { version = "0.10.0" }
+elliptic-curve = { workspace = true, features = ["sec1"] }
+hex = { workspace = true }
 
-centrum-mpc-common = { workspace = true, default-features = false }
+centrum-mpc-common = { workspace = true }
 
 [dev-dependencies]
 
@@ -43,6 +43,7 @@ centrum-mpc-common = { workspace = true, default-features = false }
 [features]
 default = ["std"]
 std = [
+	"centrum-mpc-common/std",
 #	"serde",
 	"parity-scale-codec/std",
 	"scale-info/std",
@@ -56,6 +57,7 @@ std = [
 	"frame-system/std",
   	"sp-api/std",
 	"k256/std",
+	"hex/std",
 #	"hpke/std",
 	"elliptic-curve/std"
 ]
@@ -63,5 +65,6 @@ runtime-benchmarks = [
 	"frame-benchmarking/runtime-benchmarks",
 	"sp-runtime/runtime-benchmarks",
 	"frame-system/runtime-benchmarks",
+	"frame-support/runtime-benchmarks",
 ]
-try-runtime = ["frame-support/try-runtime"]
+try-runtime = ["frame-support/try-runtime", "sp-runtime/try-runtime"]
