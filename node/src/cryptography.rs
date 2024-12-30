@@ -475,11 +475,11 @@ impl<
 
         triple_manager.stockpile(&all_participants)?;
         for (p, msg) in triple_manager.poke().await? {
-            //if p == ctx.me().await {
-            //    // Skip yourself, cait-sith never sends messages to oneself
-            //    tracing::debug!("Skipping ourselves");
-            //    continue;
-            // }
+            if p == ctx.me().await {
+                // Skip yourself, cait-sith never sends messages to oneself
+                tracing::debug!("Skipping ourselves");
+                continue;
+            }
 
             let info = self.fetch_participant(&p)?;
             messages.push(info.clone(), MpcMessage::Triple(msg));

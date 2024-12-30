@@ -165,6 +165,9 @@ impl<
 
         let node_data_storage =
             MemoryNodeStorage::from_file(format!("./node_data_dump_{}", my_account_id.to_string()));
+
+        // let node_data_storage = MemoryNodeStorage::default();
+
         let triple_storage = MemoryTripleNodeStorage::new(my_account_id.clone());
 
         let (cipher_secret_key, cipher_public_key) = mpc_keys::derive(my_seed.as_bytes());
